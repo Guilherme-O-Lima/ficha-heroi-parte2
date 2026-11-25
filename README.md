@@ -71,7 +71,7 @@ Durante o desenvolvimento da página, foram aplicados os seguintes princípios d
 ---
 
 ## Link do Repositório no GitHub
-- GitHub: https://github.com/Guilherme-O-Lima/ficha-heroi-parte1
+- GitHub: https://github.com/Guilherme-O-Lima/ficha-heroi-parte2
 
 ## 👤 Autor
 - **Guilherme Orguem Lima**
