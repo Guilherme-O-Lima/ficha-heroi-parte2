@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conheça o herói Bronkyu</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+        <!-- Título, subtítulo e imagem -->
+    <header class="header-container">
+        <h1 class="titulo borda-titulo">Bronkyu - O Cavaleiro da Espada Torta</h1>
+        <h2 class="subtitulo-header">Conheça a história desse cavaleiro lendário que vaga pelo mundo atrás dos oponentes mais perigosos, desafiadores e destemidos.</h2>
+        <img src="Imagens/Foto_Capa.jpg" class="img-capa" alt="Imagem do herói Bronkyu">
+    </header>
+    <br><br>
+
+    <!-- Menu de navegação responsivo (controlado pelo JS no mobile) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="nav-logo">Bronkyu</span>
+            <button id="btn-menu" class="hamburger">☰</button>
+            <div id="nav-links" class="nav-links">
+                <a class="botao1" href="#Sobre-o-Herói">Sobre o Herói</a>
+                <a class="botao1" href="#Atributos-e-Habilidades">Atributos e Habilidades</a>
+                <a class="botao1" href="#Inventário-e-Conquistas">Inventário e Conquistas</a>
+                <a class="botao1" href="#Galeria-de-Fotos">Galeria de Fotos</a>
+                <a class="botao1" href="#Contato-com-a-Guilda">Contato com a Guilda</a>
+                <a class="botao1" href="PáginaQuiz.html">Quiz sobre Bronkyu</a>
+                <button id="btn-tema" class="botao1">☀️ Modo Claro</button>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+
+    <main class="main-content">
+        <!-- Seção: Sobre o Herói (com interação "Ver mais") -->
+        <section id="Sobre-o-Herói">
+            <h2 class="cor-branca borda-subtitulos">Sobre o Herói</h2>
+            <p class="cor-branca texto-inicial">
+                Durante o cerco final de sua cidade natal, o soldado disciplinado violou o túmulo de uma antiga ordem para empunhar a <strong>Lâmina do Vazio</strong> — uma espada curva gravada com runas famintas. Ao tocar a empunhadura, as marcas rúnicas fundiram-se à sua carne. Ele dizimou o exército inimigo sozinho, mas o preço foi alto: a arma devorou suas memórias, emoções e o próprio nome.
+            </p>
+            <p id="historia-extra" class="cor-branca texto-inicial" style="display: none;">
+                Renascido como Bronkyu, o Guerreiro Rúnico agora vaga sem pátria. A magia de sua lâmina drena a força vital dos oponentes a cada corte, exigindo um fluxo constante de combate para que as runas não comecem a devorar sua própria alma.
+            </p>
+            <button id="btn-ver-mais" class="btn-missao">Ver história completa</button>
+        </section>
+        <br><br>
+    
+        <!-- Seção: Atributos e Habilidades -->
+        <section id="Atributos-e-Habilidades">
+            <h2 class="cor-branca borda-subtitulos">Atributos e Habilidades</h2>
+            <p class="texto-geral">Nível de potência e impacto dos golpes de Bronkyu em combate:</p>
+
+            <!-- Barras de Progresso de Atributos -->
+            <div class="atributos-container">
+                <!-- Nova Barra de Experiência (XP) interativa -->
+                <div class="atributo-card">
+                    <div class="atributo-header">
+                        <span>Experiência (XP) - Nível <span id="nivel-heroi">1</span></span>
+                        <span id="texto-xp">0 / 200 XP</span>
+                    </div>
+                    <div class="barra-fundo">
+                        <div id="barra-xp" class="barra-progresso" style="width: 0%;"></div>
+                    </div>
+                    <br>
+                    <button id="btn-ganhar-xp" class="btn-missao">Completar Missão (+25 XP)</button>
+                    <p id="msg-nivel" class="cor-azul"></p>
+                </div>
+
+                <!-- Suas barras originais -->
+                <div class="atributo-card">
+                    <div class="atributo-header">
+                        <span>Ataque com a espada</span>
+                        <span>Potência: 5.0 / Dano: 90%</span>
+                    </div>
+                    <div class="barra-fundo"><div class="barra-progresso" style="width: 90%;"></div></div>
+                </div>
+
+                <div class="atributo-card">
+                    <div class="atributo-header">
+                        <span>Chute</span>
+                        <span>Potência: 4.5 / Dano: 80%</span>
+                    </div>
+                    <div class="barra-fundo"><div class="barra-progresso" style="width: 80%;"></div></div>
+                </div>
+
+                <div class="atributo-card">
+                    <div class="atributo-header">
+                        <span>Rasteira</span>
+                        <span>Potência: 3.5 / Dano: 70%</span>
+                    </div>
+                    <div class="barra-fundo"><div class="barra-progresso" style="width: 70%;"></div></div>
+                </div>
+
+                <div class="atributo-card">
+                    <div class="atributo-header">
+                        <span>Joelhada / Cabeçada</span>
+                        <span>Potência: 4.0 / Dano: 65%</span>
+                    </div>
+                    <div class="barra-fundo"><div class="barra-progresso" style="width: 65%;"></div></div>
+                </div>
+            </div>
+
+            <br>
+            <p class="texto-geral">Além disso, o personagem apresenta características exclusivas que o fazem ter vantagem em batalhas:</p>
+            
+            <div class="capacidade-card fisicas">
+
+        <div class="capacidade-titulo">
+            <span class="capacidade-icone">💪</span>
+            <div>
+                <h3>Capacidades Físicas</h3>
+                <p>Desempenho corporal</p>
+            </div>
+        </div>
+
+        <div class="capacidade-item">
+            <div class="capacidade-info">
+                <span>Força</span>
+                <span>85%</span>
+            </div>
+            <div class="capacidade-barra">
+                <div class="capacidade-preenchimento" style="width: 85%"></div>
+            </div>
+            <p>Potência e capacidade de impacto.</p>
+        </div>
+
+        <div class="capacidade-item">
+            <div class="capacidade-info">
+                <span>Velocidade</span>
+                <span>70%</span>
+            </div>
+            <div class="capacidade-barra">
+                <div class="capacidade-preenchimento" style="width: 70%"></div>
+            </div>
+            <p>Rapidez de movimentação e reação.</p>
+        </div>
+
+        <div class="capacidade-item">
+            <div class="capacidade-info">
+                <span>Resistência</span>
+                <span>90%</span>
+            </div>
+            <div class="capacidade-barra">
+                <div class="capacidade-preenchimento" style="width: 90%"></div>
+            </div>
+            <p>Capacidade de manter o desempenho.</p>
+        </div>
+
+        <div class="capacidade-item">
+            <div class="capacidade-info">
+                <span>Agilidade</span>
+                <span>75%</span>
+            </div>
+            <div class="capacidade-barra">
+                <div class="capacidade-preenchimento" style="width: 75%"></div>
+            </div>
+            <p>Coordenação e mobilidade.</p>
+        </div>
+
+    </div>
+        <br><br>
+
+
+    <!-- CARD: CAPACIDADES PSICOLÓGICAS -->
+    <div class="capacidade-card psicologicas">
+
+        <div class="capacidade-titulo">
+            <span class="capacidade-icone">🧠</span>
+            <div>
+                <h3>Capacidades Psicológicas</h3>
+                <p>Desempenho mental</p>
+            </div>
+        </div>
+
+        <div class="capacidade-item">
+            <div class="capacidade-info">
+                <span>Inteligência</span>
+                <span>90%</span>
+            </div>
+            <div class="capacidade-barra">
+                <div class="capacidade-preenchimento" style="width: 90%"></div>
+            </div>
+            <p>Compreensão e resolução de problemas.</p>
+        </div>
+
+        <div class="capacidade-item">
+            <div class="capacidade-info">
+                <span>Estratégia</span>
+                <span>85%</span>
+            </div>
+            <div class="capacidade-barra">
+                <div class="capacidade-preenchimento" style="width: 85%"></div>
+            </div>
+            <p>Planejamento e tomada de decisões.</p>
+        </div>
+
+        <div class="capacidade-item">
+            <div class="capacidade-info">
+                <span>Percepção</span>
+                <span>80%</span>
+            </div>
+            <div class="capacidade-barra">
+                <div class="capacidade-preenchimento" style="width: 80%"></div>
+            </div>
+            <p>Identificação de detalhes e situações.</p>
+        </div>
+
+        <div class="capacidade-item">
+            <div class="capacidade-info">
+                <span>Foco</span>
+                <span>75%</span>
+            </div>
+            <div class="capacidade-barra">
+                <div class="capacidade-preenchimento" style="width: 75%"></div>
+            </div>
+            <p>Concentração e atenção.</p>
+        </div>
+
+    </div>
+        </section>
+        <br><br>
+
+        <!-- Seção: Inventário e Conquistas -->
+        <section id="Inventário-e-Conquistas">
+            <h2 class="cor-branca borda-subtitulos">Inventário e Conquistas</h2>
+            <h3 class="cor-branca">Inventário (<span id="contador-itens">0</span> itens)</h3>
+            
+            <!-- Botões de filtro por categoria -->
+            <div>
+                <button class="btn-missao btn-filtro" data-tipo="todos">Todos</button>
+                <button class="btn-missao btn-filtro" data-tipo="Arma">Armas</button>
+                <button class="btn-missao btn-filtro" data-tipo="Armadura">Armaduras</button>
+                <button class="btn-missao btn-filtro" data-tipo="Relíquia">Relíquias</button>
+            </div>
+            <br>
+
+            <!-- Lista preenchida dinamicamente pelo script.js -->
+            <ul id="lista-inventario" class="cor-branca lista-inventario"></ul>
+
+            <br><br>
+            <h3 class="cor-branca">Conquistas</h3>
+            <p class="texto-geral">Na tabela abaixo, é possível verificar as conquistas do guerreiro, bem como um breve resumo do acontecimento e a data estimada.</p>
+            <p class="texto-geral">**as datas são estimadas devido a falta de veracidade em relação ao exato ano dos acontecimentos.</p>
+            
+            <!-- Tabela de conquistas -->
+            <div class="tabela-wrapper">
+                <table class="tabela-conquistas">
+                    <tr class="cor-branca">
+                        <th>Conquista</th> <th>Ano (estimativa)</th> <th>Resumo</th>
+                    </tr>
+                    <tr class="cor-branca">
+                        <td>O Primeiro Fragmento</td> <td>1899-1902</td> <td>Despertou a Lâmina do Vácuo na cripta ancestral e sobreviveu ao ritual de vinculação rúnica</td>
+                    </tr>
+                    <tr class="cor-branca">
+                        <td>Carrasco de Dragões</td> <td>1905-1906</td> <td>Fez a espada absorver a força de um dragão ancestral, aumentando permanentemente a densidade de sua musculatura</td>
+                    </tr>
+                    <tr class="cor-branca">
+                        <td>Mente Inviolável</td> <td>1953-1962</td> <td>Resistiu a um feitiço de dominação mental lançado por um arquimago, usando o vazio de suas próprias memórias como escudo</td>
+                    </tr>
+                    <tr class="cor-branca">
+                        <td>Banquete de Runas</td> <td>1985-1990</td> <td>Manteve o brilho máximo das runas da lâmina ativo por mais de 3 horas ininterruptas em um único confronto de grande escala</td>
+                    </tr>
+                    <tr class="cor-branca">
+                        <td>Muralha de um homem só</td> <td>2000-2001</td> <td>Defendeu sozinho a ponte de um vale contra uma cavalaria inteira durante uma tempestade</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <br><br>
+
+        <!-- Seção: Galeria de Fotos -->
+        <section id="Galeria-de-Fotos">
+            <br><br>
+            <h2 class="cor-branca borda-subtitulos">Galeria de Fotos</h2>
+            <div class="carrossel-container">
+                <div class="carrossel-slides">
+                    <div class="slide" id="slide1">
+                        <img src="Imagens/Foto2.jpg" alt="Batalha contra bruxos e aliens">
+                        <p class="cor-branca texto-centro">Bronkyu lutando contra bruxos e criaturas no reino de Reindezan.</p>
+                    </div>
+                    <div class="slide" id="slide2">
+                        <img src="Imagens/Foto3.jpg" alt="Luta contra Spingertew">
+                        <p class="cor-branca texto-centro">Duelo contra o cavaleiro Spingertew na Floresta de Askaban.</p>
+                    </div>
+                    <div class="slide" id="slide3">
+                        <img src="Imagens/Foto4.jpg" alt="Reino de Jungles">
+                        <p class="cor-branca texto-centro">Bronkyu em Jungles após conquistar um acampamento de soldados elfos.</p>
+                    </div>
+                    <div class="slide" id="slide4">
+                        <img src="Imagens/Foto5.jpg" alt="Luta contra o Ogro">
+                        <p class="cor-branca texto-centro">Confronto com o ogro da Floresta Negra pelo diamante azul.</p>
+                    </div>
+                    <div class="slide" id="slide5">
+                        <img src="Imagens/Foto7.jpg" alt="Batalha de Honkswire">
+                        <p class="cor-branca texto-centro">Batalha de Honkswire contra o exército de duendes verdes.</p>
+                    </div>
+                    <div class="slide" id="slide6">
+                        <img src="Imagens/Foto8.jpg" alt="Golpe fatal no esqueleto">
+                        <p class="cor-branca texto-centro">Golpe fatal da lâmina rúnica sobre o guarda esqueleto em Burghmore.</p>
+                    </div>
+                    <div class="slide" id="slide7">
+                        <img src="Imagens/Foto9.jpg" alt="Duelo contra John Galme">
+                        <p class="cor-branca texto-centro">Duelo histórico contra o rei e feiticeiro John Galme em Alexville.</p>
+                    </div>
+                </div>
+                <!-- Controles do Carrossel -->
+                <div class="carrossel-nav">
+                    <a href="#slide1">1</a>
+                    <a href="#slide2">2</a>
+                    <a href="#slide3">3</a>
+                    <a href="#slide4">4</a>
+                    <a href="#slide5">5</a>
+                    <a href="#slide6">6</a>
+                    <a href="#slide7">7</a>
+                </div>
+            </div>
+        </section>
+        <br><br>
+
+        <!-- Seção: Contato com a Guilda -->
+        <section id="Contato-com-a-Guilda">
+            <h2 class="cor-branca borda-subtitulos">Contato com a Guilda</h2>
+            <br>
+            <!-- Formulário validado pelo JavaScript -->
+            <h3 class="cor-branca">Enviar Mensagem à Guilda</h3>
+            <form id="form-guilda">
+                <label class="cor-branca" for="nome-contato">Seu Nome:</label><br>
+                <input type="text" id="nome-contato" placeholder="Digite seu nome"><br><br>
+
+                <label class="cor-branca" for="email-contato">Seu E-mail:</label><br>
+                <input type="email" id="email-contato" placeholder="exemplo@email.com"><br><br>
+
+                <label class="cor-branca" for="msg-contato">Mensagem:</label><br>
+                <textarea id="msg-contato" rows="4" placeholder="Escreva sua missão ou dúvida..."></textarea><br><br>
+
+                <button type="submit" class="botao1">Enviar Mensagem</button>
+                <p id="feedback-form"></p>
+            </form>
+            <br>
+            <h2 class="cor-branca borda-subtitulos">Contato com o criador da página</h2>
+            <h3 class="cor-branca">Como posso entrar em contato com o criador do site?</h3>
+            <p class="cor-branca">Muito prazer, sou Guilherme Orguem Lima, 18 anos, estudante do segundo semestre de Engenharia da Computação, na Universidade Santa Cecília, e abaixo deixei alguns meios de comunicação para entrarem em contato.</p>
+            <ol class="cor-branca lista-contato">
+                <li>Telefone: (13) 98877-8557</li>
+                <li>E-mail: guilherme.orguem@gmail.com</li>
+                <li>Linkedin: <a class="cor-azul" href="https://www.linkedin.com/in/guilherme-orguem-8b932a402/" target="_blank">Página Linkedin</a></li>
+            </ol>
+        </section>
+        <br><br>
+
+        <footer>
+            <p class="cor-branca texto-centro">© 2026 - Todos os direitos reservados.</p>
+        </footer>
+    </main>
+
+    <!-- Arquivo JavaScript externo no final do body -->
+    <script src="script.js"></script>
+</body>
+</html>

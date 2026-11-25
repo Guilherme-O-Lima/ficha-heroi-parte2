@@ -1,0 +1,715 @@
+    /* 1. VARIÁVEIS GLOBAIS (ROOT) */
+:root {
+    --cor_texto: aliceblue;
+    --cor_primaria: #3b82f6;
+    --cor_fundo_card: rgba(30, 41, 59, 0.7);
+    --cor_botao: #242938;
+    --cor_botao_borda: #484f58;
+    --cor_galeria_botao: #1e293b;
+    --cor_galeria_borda: #334155;
+    --cor_galeria_hover: #3b82f6;
+    --cor_galeria_texto_hover: #ffffff;
+}
+
+    /* 2. ESTILOS BASE E ESTRUTURA GERAL */
+
+/* Estiliza o fundo da página com gradiente escuro, define a fonte padrão e ativa a rolagem suave ao clicar nos links do menu */
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--cor_texto);
+    scroll-behavior: smooth;
+    background: linear-gradient(135deg, #030408 0%, #161b22 100%);
+}
+
+/* Classe utilitária para aplicar a cor branca padrão aos textos */
+.cor-branca { 
+    color: var(--cor_texto); 
+}
+
+/* Classe utilitária para links em tom azul claro, removendo o sublinhado padrão */
+.cor-azul { 
+    color: #60a5fa; 
+    text-decoration: none; 
+}
+
+/* Efeito ao passar o mouse por cima dos links azuis (adiciona sublinhado) */
+.cor-azul:hover { 
+    text-decoration: underline; 
+}
+
+/* Contêiner principal da página: limita a largura máxima e centraliza todo o conteúdo */
+.main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+}
+
+    /* 3. BARRA DE NAVEGAÇÃO E MENU (FIXO E SANDUÍCHE) */
+
+/* Fixa a barra de navegação no topo da tela (position: sticky) e adiciona um efeito de desfoque transparente */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #1e293b;
+    padding: 12px 20px;
+}
+
+/* Alinha o título "Bronkyu" do menu à esquerda e os botões à direita usando Flexbox */
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estiliza a logo/nome "Bronkyu" no canto do menu */
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #60a5fa;
+    margin-right: 10px;
+}
+
+/* Agrupa e alinha os links de navegação na horizontal */
+.nav-links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Oculta o checkbox e o ícone de hambúrguer por padrão (só aparecem no mobile/tablet) */
+.menu-toggle, .hamburger {
+    display: none;
+}
+
+/* Estiliza os botões de navegação do menu */
+a.botao1 {
+    border: 2px solid var(--cor_botao_borda);
+    background: var(--cor_botao);
+    color: #f0f6fc;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+/* Efeito visual ao passar o mouse por cima dos botões do menu */
+a.botao1:hover {
+    border-color: #7082b9;
+    background-color: #38446b;
+    color: #ffffff;
+}
+
+    /* 4. CABEÇALHO, TÍTULOS E IMAGEM DE CAPA */
+
+/* Centraliza o conteúdo do cabeçalho */
+.header-container {
+    text-align: center;
+    padding: 20px 15px;
+}
+
+/* Garante a cor padrão para os títulos H1 */
+.titulo {
+    color: var(--cor_texto);
+}
+
+/* Estiliza o subtítulo do cabeçalho com texto mais suave e largura reduzida */
+.subtitulo-header {
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: #94a3b8;
+    max-width: 700px;
+    margin: 10px auto;
+}
+
+/* Moldura estilizada ao redor do título principal "Bronkyu" */
+.borda-titulo {
+    margin: 20px auto;
+    max-width: 650px;
+    width: 90%;
+    border: 1px solid var(--cor_primaria);
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--cor_fundo_card);
+    font-size: 1.6rem;
+}
+
+/* Estiliza a imagem de capa do personagem com cantos arredondados e sombra */
+.img-capa {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 650px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Sublinhado azul estilizado abaixo dos títulos de cada seção */
+.borda-subtitulos {
+    margin: 40px 0 20px 0;
+    display: inline-block;
+    border-bottom: 3px solid var(--cor_primaria);
+    padding-bottom: 5px;
+    font-size: 1.6rem;
+}
+
+/* Ajusta o tamanho da fonte e altura de linha dos parágrafos do texto */
+.texto-inicial, .texto-geral {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+    /* 5. BARRAS DE PROGRESSO (ATRIBUTOS DO PERSONAGEM) */
+
+/* Organiza os cards de atributos em uma coluna vertical com espaçamento */
+.atributos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+/* Caixinha escura com borda que envolve cada habilidade individualmente */
+.atributo-card {
+    background: var(--cor_fundo_card);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+}
+
+/* Linha com o nome do ataque à esquerda e os valores/porcentagem à direita */
+.atributo-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Fundo escuro/vazio da barra de progresso */
+.barra-fundo {
+    background: #0f172a;
+    border-radius: 8px;
+    height: 14px;
+    overflow: hidden;
+    border: 1px solid #1e293b;
+}
+
+/* Preenchimento azul da barra de progresso (com efeito de transição suave) */
+.barra-progresso {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    border-radius: 8px;
+    transition: width 1s ease-in-out;
+}
+
+/* Divide as listas de capacidades Físicas e Psicológicas em duas colunas */
+.capacidades-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+    /* 6. TABELA RESPONSIVA DE CONQUISTAS */
+
+/* Permite rolar a tabela para os lados em telas pequenas caso não caiba */
+.tabela-wrapper {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+/* Estiliza a tabela de conquistas com fundo escuro e cantos arredondados */
+.tabela-conquistas {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--cor_fundo_card);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Aplica espaçamento interno e borda inferior em todas as células da tabela */
+.tabela-conquistas th, .tabela-conquistas td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+}
+
+/* Destaca o cabeçalho da tabela com fundo diferenciado e texto azul */
+.tabela-conquistas th {
+    background: #1e293b;
+    color: #60a5fa;
+}
+
+    /* 7. CARROSSEL DE FOTOS (GALERIA) */
+
+/* Envolvente do carrossel: limita o tamanho máximo na tela */
+.carrossel-container {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Trilho do carrossel: alinha as fotos lado a lado e ativa o encaixe suave ao rolar (scroll-snap) */
+.carrossel-slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Estiliza a barra de rolagem horizontal do carrossel */
+.carrossel-slides::-webkit-scrollbar {
+    height: 8px;
+}
+.carrossel-slides::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+/* Cada foto individual ocupando 100% da largura visível do carrossel */
+.slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background: #0f172a;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Ajusta a imagem dentro do slide para não distorcer */
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Centraliza os botões numéricos abaixo do carrossel */
+.carrossel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* Botões numéricos da galeria */
+.carrossel-nav a {
+    background: var(--cor_galeria_botao);
+    color: var(--cor_texto);
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid var(--cor_galeria_borda);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover dos botões */
+.carrossel-nav a:hover {
+    background: var(--cor_galeria_hover);
+    color: var(--cor_galeria_texto_hover);
+}
+
+    /* 8. OUTRAS LISTAS E FOOTER (Inventário, contato com a Guilda e Rodapé) */
+
+/* Destaca o título de cada item do inventário em tom azul */
+.lista-inventario h4 {
+    margin: 10px 0 5px 0;
+    color: #60a5fa;
+}
+
+/* Aumenta o espaçamento entre as linhas da lista de contato com o criador */
+.lista-contato {
+    line-height: 2;
+    font-size: 1.05rem;
+}
+
+/* Linha divisória e espaçamento no rodapé da página */
+footer {
+    border-top: 1px solid #1e293b;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+    /* 9. MEDIA QUERIES (Responsividade para celulares e tablets) */
+@media screen and (max-width: 1023px) {
+    /* Exibe o ícone do menu sanduíche (hambúrguer) */
+    .hamburger {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--cor_texto);
+    }
+
+    /* Esconde os links do menu e os transforma em uma lista suspensa vertical */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(15, 23, 42, 0.98);
+        padding: 15px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #334155;
+    }
+
+    /* Revela os links do menu quando o usuário clica no ícone sanduíche */
+    .menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* Faz os botões do menu ocuparem 100% da largura em celulares */
+    a.botao1 {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /* Muda a exibição das capacidades físicas/psicológicas para 1 coluna no mobile */
+    .capacidades-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adiciona no final do @media screen and (max-width: 1023px) */
+    .nav-links.ativo {
+    display: flex;
+    }
+
+}
+
+/* Centraliza o texto do rodapé */
+.texto-centro {
+    text-align: center;
+}
+
+/* Botão decorado para o XP (e filtros) */
+.btn-missao {
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    color: #ffffff;
+    border: 1px solid #60a5fa;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-missao:hover {
+    background: linear-gradient(90deg, #1d4ed8, #2563eb);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+@media screen and (max-width: 1023px) {
+    .nav-links.ativo {
+        display: flex;
+    }
+    .item-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .item-img {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+
+   /* 10. CARDS DO INVENTÁRIO E DAS CAPACIDADES COM IMAGEM (UI/UX)
+
+   /* INVENTÁRIO */
+
+/* Remove as bolinhas padrão da lista e organiza os cards em coluna */
+.lista-inventario {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Card individual seguindo o mesmo padrão visual dos atributos (Consistência) */
+.item-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--cor_fundo_card);
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+/* Feedback visual ao passar o mouse sobre o item */
+.item-card:hover {
+    border-color: var(--cor_primaria);
+    transform: translateX(4px);
+}
+
+/* Miniatura quadrada da imagem do item */
+.item-img {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #475569;
+    flex-shrink: 0;
+}
+
+/* Título e tag de raridade/tipo */
+.item-info h4 {
+    margin: 0 0 6px 0;
+    color: #60a5fa;
+    font-size: 1.1rem;
+}
+
+.item-tag {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-weight: normal;
+}
+
+.item-info p {
+    margin: 0;
+}
+
+    /* CAPACIDADES */
+
+.capacidades-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+/* Card principal */
+.capacidade-card {
+    background: var(--cor_fundo_card);
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 22px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.capacidade-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--cor_primaria);
+}
+
+/* Cabeçalho */
+.capacidade-titulo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #334155;
+}
+
+.capacidade-icone {
+    font-size: 2rem;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(59, 130, 246, 0.15);
+}
+
+.capacidade-titulo h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--cor_texto);
+}
+
+.capacidade-titulo p {
+    margin: 5px 0 0;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Cada atributo */
+.capacidade-item {
+    margin-bottom: 22px;
+}
+
+.capacidade-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Nome e porcentagem */
+.capacidade-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: var(--cor_texto);
+}
+
+/* Fundo da barra */
+.capacidade-barra {
+    width: 100%;
+    height: 10px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Preenchimento */
+.capacidade-preenchimento {
+    height: 100%;
+    border-radius: 20px;
+    animation: animar-capacidade 1.2s ease-out;
+}
+
+/* Azul para capacidades físicas */
+.fisicas .capacidade-preenchimento {
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+/* Roxo para capacidades psicológicas */
+.psicologicas .capacidade-preenchimento {
+    background: linear-gradient(90deg, #7c3aed, #a78bfa);
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+}
+
+/* Descrição */
+.capacidade-item > p {
+    margin: 7px 0 0;
+    font-size: 0.82rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+/* Animação das barras */
+@keyframes animar-capacidade {
+    from {
+        width: 0;
+    }
+}
+
+/* Modo claro */
+body.modo-claro .capacidade-card {
+    border-color: #cbd5e1;
+}
+
+body.modo-claro .capacidade-titulo {
+    border-bottom-color: #cbd5e1;
+}
+
+body.modo-claro .capacidade-titulo p,
+body.modo-claro .capacidade-item > p {
+    color: #475569;
+}
+
+body.modo-claro .capacidade-barra {
+    background: #e2e8f0;
+    border-color: #cbd5e1;
+}
+
+/* Responsividade */
+@media screen and (max-width: 700px) {
+    .capacidades-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .capacidade-card {
+        padding: 18px;
+    }
+}
+
+    /* 11. MODO CLARO (ATIVADO VIA JAVASCRIPT NO BODY) */
+body.modo-claro {
+    --cor_texto: #0f172a;
+    --cor_primaria: #2563eb;
+    --cor_fundo_card: rgba(255, 255, 255, 0.9);
+    --cor_botao: #e2e8f0;
+    --cor_botao_borda: #94a3b8;
+    background: transparent;
+    --cor_galeria_botao: #ffffff;
+    --cor_galeria_borda: #cbd5e1;
+    --cor_galeria_hover: #3b82f6;
+    --cor_galeria_texto_hover: #ffffff;
+}
+
+/* Ajustes de contraste para elementos no modo claro */
+body.modo-claro .navbar {
+    background: rgba(241, 245, 249, 0.95);
+    border-bottom: 1px solid #cbd5e1;
+}
+
+body.modo-claro a.botao1,
+body.modo-claro button.botao1 {
+    color: #0f172a;
+}
+
+body.modo-claro .subtitulo-header,
+body.modo-claro .item-tag {
+    color: #475569;
+}
+
+body.modo-claro .barra-fundo {
+    background: #cbd5e1;
+    border-color: #94a3b8;
+}
+
+body.modo-claro .tabela-conquistas th {
+    background: #e2e8f0;
+    color: #1d4ed8;
+}
+
+body.modo-claro .slide {
+    background: #ffffff;
+}
+
+    /* 12. ESTADO ATIVO DOS FILTROS, FEEDBACK DO FORMULÁRIO E BOTÃO DE TEMA */
+/* Destaca visualmente qual categoria do inventário está ativa */
+.btn-filtro.filtro-ativo {
+    background: #1e3a8a;
+    border-color: #93c5fd;
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Padroniza o botão de tema do menu com os links de navegação */
+button.botao1 {
+    border: 2px solid var(--cor_botao_borda);
+    background: var(--cor_botao);
+    color: #f0f6fc;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button.botao1:hover {
+    border-color: #7082b9;
+    background-color: #38446b;
+    color: #ffffff;
+}
+
+/* Mensagem de feedback do formulário */
+#feedback-form {
+    font-weight: bold;
+    margin-top: 12px;
+}

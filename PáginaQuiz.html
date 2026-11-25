@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sobre Bronkyu</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <h1 class="titulo borda-titulo header-container">Bem-vindo ao quiz sobre Bronkyu</h1>
+    <h2 class="subtitulo-header">Aqui você vai testar seus conhecimentos sobre este guerreiro. Caso tenha alguma dúvida, retorne ao site principal no botão localizado ao final dessa página e consulte mais informações.</h2>
+
+<br><br>
+<form action="">
+<label class = "cor-branca" for="campo_nome">Nome</label>
+<input type="text" id="campo_nome" placeholder="Digite o seu nome completo">
+<br><br>
+<label class = "cor-branca" for="campo_email">Email</label>
+<input type="text" id="campo_email" placeholder="Digite o seu e-mail">
+<br><br>
+<hr>
+<h3 class="cor-branca">Pergunta 1: Qual é o apelido dado a Bronkyu devido à sua espada?</h3>
+<input type="radio" id="campo_espada-torta" name="pergunta1" value="espada-torta">
+<label class="cor-branca" for="campo_espada-torta">Cavaleiro da Espada Torta</label>
+<br>
+<input type="radio" id="campo_espada-ouro" name="pergunta1" value="espada-ouro">
+<label class="cor-branca" for="campo_espada-ouro">Cavaleiro da Espada de Ouro</label>
+<br>
+<input type="radio" id="campo_armadura-brilhante" name="pergunta1" value="armadura-brilhante">
+<label class="cor-branca" for="campo_armadura-brilhante">Cavaleiro da Armadura Brilhante</label>
+<br>
+<input type="radio" id="campo_espada-ferro" name="pergunta1" value="espada-ferro">
+<label class="cor-branca" for="campo_espada-ferro">Cavaleiro da Espada de Ferro</label>
+<br><br>
+<hr>
+<h3 class="cor-branca">Pergunta 2: Qual é o nome da famosa espada de Bronkyu?</h3>
+<input type="radio" id="campo_espada-torta" name="pergunta2" value="espada-torta">
+<label class="cor-branca" for="campo_espada-torta">Espada Torta</label>
+<br>
+<input type="radio" id="campo_espada-morte" name="pergunta2" value="espada-morte">
+<label class="cor-branca" for="campo_espada-morte">Espada da Morte</label>
+<br>
+<input type="radio" id="campo_lamina-vazio" name="pergunta2" value="lamina-vazio">
+<label class="cor-branca" for="campo_lamina-vazio">Lâmina do Vazio</label>
+<br>
+<input type="radio" id="campo_espada-poder" name="pergunta2" value="espada-poder">
+<label class="cor-branca" for="campo_espada-poder">Espada do Poder</label>
+<br><br>
+<hr>
+<h3 class="cor-branca">Pergunta 3: Selecione os itens do inventário de Bronkyu.</h3>
+<p class= "texto-geral">*pode selecionar mais de um item</p>
+<input type="checkbox" id="item1" name="item1" value="lamina-vazio">
+<label class = "cor-branca" for="">Lâmina do Vazio</label>
+<br>
+<input type="checkbox" id="item2" name="item2" value="armadura-reino-esquecido">
+<label class = "cor-branca" for="">Armadura do Reino Esquecido</label>
+<br>
+<input type="checkbox" id="item3" name="item3" value="foice-mortal">
+<label class = "cor-branca" for="">Foice mortal</label>
+<br>
+<input type="checkbox" id="item4" name="item4" value="manto-linho-terroso">
+<label class = "cor-branca" for="">Manto de Linho Terroso</label>
+<br>
+<input type="checkbox" id="item5" name="item5" value="capa-invisibilidade">
+<label class = "cor-branca" for="">Capa da Invisibilidade</label>
+<br>
+<input type="checkbox" id="item6" name="item6" value="pingente-brasao">
+<label class = "cor-branca" for="">Pingente do Brasão do Reino Esquecido</label>
+<br><br>
+<hr>
+<h3 class="cor-branca">Pergunta 4: Escolha corretamente uma capacidade física e uma capacidade psicológica de Bronkyu.</h3>
+<p class = "texto-geral">Capacidade Física</p>
+<select name="capacidades-fisicas" id="">
+<option selected disabled value="">Selecione uma opção</option>
+<option value="vitalidade-infinita">Vitalidade infinita</option>
+<option value="baixo-reflexo">Baixo reflexo</option>
+<option value="camuflagem-especial">Camuglagem especial</option>
+<option value="forca-desvastadora">Força devastadora</option>
+</select>
+<br>
+<p class = "texto-geral">Capacidade Psicológica</p>
+<select name="capacidades-psicologicas" id="">
+<option selected disabled value="">Selecione uma opção</option>
+<option value="espirito-equipe">Espírito de Equipe</option>
+<option value="extinto-sobrevivencia">Extinto de Sobrevivência</option>
+<option value="fadiga-recorrente">Fadiga recorrente</option>
+<option value="mente-semi-blindada">Mente semi-blindada</option>
+</select>
+
+<br><br>
+
+<div id="resultado-quiz"></div>
+<input type="submit" value="Enviar Formulário" class="btn-missao">
+
+</form>
+
+<br><br><br>
+
+<a class="botao1" href="index.html">Voltar à página principal</a>
+
+
+</body>
+</html>
